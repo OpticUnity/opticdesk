@@ -204,6 +204,32 @@ function formatD(val) {
     return (n > 0 ? "+" : (n < 0 ? "-" : "")) + Math.abs(n).toFixed(2);
 }
 
+
+const correctKey = "meridian"; // your lowercase-only key
+
+function checkAccess() {
+  const input = document.getElementById('accessInput').value;
+  const errorMsg = document.getElementById('errorMsg');
+
+  const regex = /^[a-z]+$/; // only lowercase letters
+
+  if (!regex.test(input)) {
+    errorMsg.textContent = "Only lowercase letters are allowed (a-z).";
+    errorMsg.style.display = 'block';
+    return;
+  }
+
+  if (input === correctKey) {
+    document.body.classList.remove('locked');
+    document.getElementById('lockOverlay').style.display = 'none';
+  } else {
+    errorMsg.textContent = "Incorrect key. Try again.";
+    errorMsg.style.display = 'block';
+  }
+}
+
+
+
 // --------------- LENS TRANSPOSITION CALCULATION ---------------
 
 // Utility

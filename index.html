@@ -25,10 +25,20 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
         
     </head>
-    <body>
+    <body class="locked">
+    
+    <div id="lockOverlay">
+      <div>
+        <p>Kung anong galaw ko, siya ang _________ na ni-nu-neutralize ko:</p>
+        <input class="lockInput" type="text" id="accessInput" placeholder="Enter code" oninput="this.value=this.value.toLowerCase()" />
+        <br/>
+        <button class="lockButton" onclick="checkAccess()">Unlock</button>
+        <p id="errorMsg" style="color: red; display: none;"></p>
+      </div>
+    </div>
 
     <!-- Body Wrapper-->
-    <div class="wrapper">
+    <div class="wrapper" id="mainProgramContent">
 
       <!-- Navigation Bar -->
       <nav>
@@ -462,8 +472,8 @@
 
 
     <!-- scripts -->
-    <script src="scripts/darkmode-script.js"></script>
     <script src="scripts/ui-toggle-script.js"></script>
+    <script src="scripts/darkmode-script.js"></script>
     <script src="scripts/lens-transposition-script.js"></script>
     <script src="scripts/effective-power-script.js"></script>
     <script src="scripts/spherical-equivalent-script.js"></script>
