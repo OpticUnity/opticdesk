@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        
+        <meta charset="UTF-8">
+        <!-- Page Title -->
+        <title>OpticDesk</title>
+
+        <!-- Initial tags -->
+        <meta charset="UTF-8" />
+        <meta name="description" content="This is a template sample for future project use" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            
+        <!-- Page Icon | Activate if outside of CodePen-->
+        <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+            
+            
+        <!-- style.css link -->
+        <link rel="stylesheet" href="style.css" />
+            
+        <!-- Font Awsome local link -->
+        <!--<link rel="stylesheet" href="../../all.css" />-->
+
+        <!-- Font Awsome main link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        
+    </head>
+    <body>
+
+    <!-- Body Wrapper-->
+    <div class="wrapper">
+
+      <!-- Navigation Bar -->
+      <nav>
+        <div class="navigation-bar">
+
+          <!-- Logo and/or Title Area of Navigation Bar -->
+          <div class="title-page-area"><img src="assets/images/logo.png" class="project-logo"> OpticUnity</div>
+
+          <!-- Appearance Area (Color Theme and DarkMode) of Navigation Bar -->
+          <div class="appearance-area">
+            <!-- Darkmode Button -->
+            <div class="dark-mode-btn" title="Dark Mode">
+              <!-- Data Color : Hex  0-White 1-text-color 2-primary-color 3-secondary-color 4-ui-bg -->
+              <i class="btn fas fa-moon" data-color="#fff #e4e6eb #272B2F #1D2124 #171A1D"></i>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content Section -->
+      <main class="content">
+    
+        <!-- Main UI Section -->
+        <section id="home" class="page-content">
+          
+          <!------- MAIN MENU ------->
+          <div class="mainMenu">
+
+            <h1><i class="fa-solid fa-glasses"></i> <span class="color-text">Optic</span>Desk</h1>
+            <p>Hub for your ophthalmic computation needs.</p>
+
+
+            <button id="calculetorBtn"><i class="fa-solid fa-calculator"></i> Calculator</button>
+            <button id="formulaBtn"><i class="fa-solid fa-square-root-variable"></i> Formula</button>
+            <button id="guideBtn"><i class="fa-solid fa-book"></i> Guide</button>
+
+          </div>
+        
+          <!------- CALCULATOR MENU ------->
+          <div class="calculatorMenu hidden">
+            
+            <h1><i class="fa-solid fa-calculator"></i> Calculator</h1>
+            <p>Select a type of calculator you want to use.</p>
+
+            <button id="lensTranspositionCalcBtn" class="functionBtn"><i class="fa-solid fa-glasses"></i> Lens Transposition</button>
+            <button id="contactLensParameterCalcBtn"class="functionBtn"><img src="assets/images/contact-lens-white.png" alt="" class="contact-lens-icon"> Contact Lens Parameter</button>
+            <button id="calculatorMenuBackBtn"> Back</button>
+
+          </div>
+
+          <!------- LENS TRANSPOSITION UI ------->
+          <div class="lensTranspositionUI hidden">
+
+            <h1><i class="fa-solid fa-glasses"></i> Lens Transposition</h1>
+
+            <h3 class="lensTranspositionUIHeader">Select a format you wish to convert : </h3>
+
+            <select class="uiSelect" id="cylFormatSelect">
+                  <option value="" disabled selected>Select Format</option>
+                  <option value="minusCyl">Minus Cylinder</option>
+                  <option value="plusCyl">Plus Cylinder</option>
+                  <option value="crossCyl">Cross Cylinder</option>
+            </select>
+
+            <div class="lensTranspositionFormContainer hidden">
+
+              <h3 class="cyl-form-header">Enter Your Cylinder Prescription : </h3>
+              <p>Input limited to 20.00D</p>
+              
+              <!-- MINUS CYL PRESCRIPTION (Mcp) -->
+              <div class="minusCylContainer hidden">
+                <div class="minusCylPrescriptionForm">
+
+                  <div class="sphereArea inputForm">
+                    <label for="sphereInputMcp"><strong>SPH :</strong></label>
+                    <input class="prescriptionInput" type="text" id="sphereInputMcp">
+                  </div>
+
+                  <div class="divisionArea">
+                  <p> / </p>
+                  </div>
+
+                  <div class="cylArea inputForm">
+                    <label for="cylinderInputMcp"><strong>(-) CYL :</strong></label>
+                    <input class="prescriptionInput" type="text" id="cylinderInputMcp">
+                  </div>
+
+                  <div class="divisionArea">
+                  <p> X </p>
+                  </div>
+
+                  <div class="axisArea inputForm">
+                    <label for="axisInputMcp"><strong>AXIS :</strong></label>
+                    <input class="prescriptionInput" type="text" id="axisInputMcp">
+                  </div>
+
+                </div>
+
+                <div class="conversionArea">
+
+                  <h3>Select how you wish to convert : </h3>
+
+                  <div class="conversionMenu">
+                    <button id="minusConvertPlusBtn">Plus Cylinder</button>
+                    <button id="minusConverCrossBtn">Cross Cylinder</button>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- PLUS CYL PRESCRIPTION (Pcp) -->
+              <div class="plusCylContainer hidden">
+                <div class="plusCylPrescriptionForm">
+
+                  <div class="sphereArea inputForm">
+                    <label for="sphereInputPcp"><strong>SPH :</strong></label>
+                    <input class="prescriptionInput" type="text" id="sphereInputPcp">
+                  </div>
+
+                  <div class="divisionArea">
+                  <p> / </p>
+                  </div>
+
+                  <div class="cylArea inputForm">
+                    <label for="cylinderInputPcp"><strong>(+) CYL :</strong></label>
+                    <input class="prescriptionInput" type="text" id="cylinderInputPcp">
+                  </div>
+
+                  <div class="divisionArea">
+                  <p> X </p>
+                  </div>
+
+                  <div class="axisArea inputForm">
+                    <label for="axisInputPcp"><strong>AXIS :</strong></label>
+                    <input class="prescriptionInput" type="text" id="axisInputPcp">
+                  </div>
+
+                </div>
+
+                <div class="conversionArea">
+
+                  <h3>Select how you wish to convert : </h3>
+
+                  <div class="conversionMenu">
+                    <button id="plusConvertMinusBtn">Minus Cylinder</button>
+                    <button id="plusConvertCrossBtn">Cross Cylinder</button>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- CROSS CYL PRESCRIPTION (Ccp) lol ccp -->
+              <div class="crossCylContainer hidden">
+                <div class="crossCylPrescriptionForm">
+
+                  <div class="cylOneArea inputForm">
+                    <label for="cylOneInputCcp"><strong>CYL 1 :</strong></label>
+                    <input class="prescriptionInput" type="text" id="cylOneInputCcp">
+                  </div>
+
+                  <div class="divisionArea">
+                  <p> X </p>
+                  </div>
+
+                  <div class="axisOneArea inputForm">
+                    <label for="axisInputCcp"><strong>AXIS 1 :</strong></label>
+                    <input class="prescriptionInput" type="text" id="axisInputCcp">
+                  </div>
+
+                  <div class="divisionArea">
+                  <p> / </p>
+                  </div>
+
+                  <div class="cylTwoArea inputForm">
+                    <label for="cylTwoInputCcp"><strong>CYL 2 :</strong></label>
+                    <input class="prescriptionInput" type="text" id="cylTwoInputCcp">
+                  </div>
+
+                </div>
+
+                <div class="conversionArea">
+
+                  <h3>Select how you wish to convert : </h3>
+
+                  <div class="conversionMenu">
+                    <button id="crossConvertMinusBtn">Minus Cylinder</button>
+                    <button id="crossConvertPlusBtn">Plus Cylinder</button>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="lensTranspositionResultBox hidden">
+                
+                <h3>Result : </h3>
+                <p id="lensTranspositionResult">Text Result</p>
+
+              </div>
+
+            </div>
+
+            <button id="lensTranspositionResetBtn">Reset</button>
+            <button id="lensTranspositionUIBackBtn">Back</button>
+
+          </div>
+
+          <!------- CONTACT LENS PARAMETER MENU ------->
+          <div class="contactLensParameterMenu hidden">
+
+            <h1>
+                <img src="assets/images/contact-lens-lightmode.png" alt="" class="contact-lens-lightmode-icon">
+                <img src="assets/images/contact-lens-darkmode.png" alt="" class="contact-lens-darkmode-icon hidden">
+                Contact Lens Parameter</h1>
+            <p>Select specific parameter you want to compute.</p>
+            
+            <button id="effectivePowerBtn" class="functionBtn"><i class="fa-solid fa-plus-minus"></i>  Effective Power</button>
+            <button id="sphericalEquivalentBtn" class="functionBtn"><i class="fa-solid fa-divide"></i>  Spherical Equivalent</button>
+            <button id="baseCurveBtn" class="functionBtn"><i class="fa-solid fa-compass-drafting"></i> Base Curve</button>
+            <button id="contactLensParameterBackBtn">Back</button>
+
+          </div>
+
+          <!------- EFFECTIVE POWER UI ------->
+          <div class="effectivePowerUI hidden">
+
+            <h1><i class="fa-solid fa-plus-minus"></i> Effective Power</h1>
+
+            <h3 class="effectivePowerUIHeader">Select a format you wish to convert : </h3>
+
+            <select class="uiSelect" id="effectivePowerFormatSelect">
+                  <option value="" disabled selected>Select Format</option>
+                  <option value="sphereEp">Sphere</option>
+                  <option value="cylinderEp">Cylinder</option>
+            </select>
+
+            <div class="effectivePowerFormContainer hidden">
+
+              <h3 class="effective-power-form-header">Enter Your Prescription : </h3>
+              <p>Input limited to 20.00D</p>
+
+              <div class="sphericalPrescriptionEp hidden">
+
+                  <div class="sphereArea inputForm">
+                    <label for="sphereInputSpEp"><strong>SPH :</strong></label>
+                    <input class="prescriptionInput" type="text" id="sphereInputSpEp">
+                  </div>
+
+              </div>
+
+              <div class="cylindricalPrescriptionEp hidden">
+
+                  <div class="sphereArea inputForm">
+                    <label for="sphereInputCpEp"><strong>SPH :</strong></label>
+                    <input class="prescriptionInput" type="text" id="sphereInputCpEp">
+                  </div>
+
+                  <div class="divisionArea">
+                  <p> / </p>
+                  </div>
+
+                  <div class="cylArea inputForm">
+                    <label for="cylinderInputCpEp"><strong>CYL :</strong></label>
+                    <input class="prescriptionInput" type="text" id="cylinderInputCpEp">
+                  </div>
+
+                  <div class="divisionArea">
+                  <p> X </p>
+                  </div>
+
+                  <div class="axisArea inputForm">
+                    <label for="axisInputCpEp"><strong>AXIS :</strong></label>
+                    <input class="prescriptionInput" type="text" id="axisInputCpEp">
+                  </div>
+
+              </div>
+
+              <div class="effectivePowerBody hidden">
+
+                <div class="effectivePower inputForm">
+                    <label for="vertexDistanceInputEp"><strong>Vertex Distance (mm):</strong></label>
+                    <input class="prescriptionInput vertexDistanceInput" type="text" id="vertexDistanceInputEp">
+                </div>
+
+                <button id="effectivePowerComputeBtn">Compute</button>
+
+              </div>
+
+
+              <div class="effectivePowerResultBox hidden">
+                  
+                  <h3>Effective Power : </h3>
+                  <p id="effectivePowerResult">Text Result</p>
+
+              </div>
+
+            </div>
+
+            <button id="effectivePowerResetBtn">Reset</button>
+            <button id="effectivePowerUIBackBtn">Back</button>
+            
+          </div>
+
+          <!------- SPHERICAL EQUIVALENT UI ------->
+          <div class="sphericalEquivalentUI hidden">
+
+            <h1><i class="fa-solid fa-divide"></i> Spherical Equivalent</h1>
+
+            <h3 class="spherical-equivalent-form-header">Enter Your Prescription : </h3>
+            <p>Input limited to 20.00D</p>
+
+            <div class="sphericalEquivalentPrescriptionContainer">
+
+              <div class="sphereArea inputForm">
+                <label for="sphereInputSe"><strong>SPH :</strong></label>
+                <input class="prescriptionInput" type="text" id="sphereInputSe">
+              </div>
+
+              <div class="divisionArea">
+                <p> / </p>
+              </div>
+
+              <div class="cylArea inputForm">
+                <label for="cylinderInputSe"><strong>CYL :</strong></label>
+                <input class="prescriptionInput" type="text" id="cylinderInputSe">
+              </div>
+
+            </div>
+
+            <button id="sphericalEquivalentComputeBtn">Compute</button>
+
+            <div class="sphericalEquivalentResultBox hidden">
+                  
+              <h3>Spherical Equivalent : </h3>
+              <p id="sphericalEquivalentResult">Text Result</p>
+
+            </div>
+
+
+            <button id="sphericalEquivalentResetBtn">Reset</button>
+            <button id="sphericalEquivalentUIBackBtn"> Back</button>
+
+          </div>
+
+          <!------- BASE CURVE UI ------->
+          <div class="baseCurveUI hidden">
+
+            <h1><i class="fa-solid fa-compass-drafting"></i> Base Curve</h1>
+
+            <h3 class="base-curve-form-header">Enter your K-readings : </h3>
+            <p>Input limited to 30.00D to 70.00D</p>
+
+            <div class="flatkArea inputForm">
+              <label for="flatKinputBc"><strong>FLAT-K :</strong></label>
+              <input class="flatKinput" type="text" id="flatKinputBc">
+            </div>
+
+            <div class="clTypeArea">
+
+              <h3>Select the type of your contact lens : </h3>
+
+              <div class="clTypeMenu">
+                <button id="softClBcBtn">Soft Contact Lens</button>
+                <button id="rgpClBcBtn">RGP Contact Lens</button>
+              </div>
+
+            </div>
+
+            <div class="baseCurveResultBox hidden">
+                  
+              <h3>Contact Lens Base Curve : </h3>
+              <p id="baseCurveResult">Text Result</p>
+
+            </div>
+
+            <button id="baseCurveResetBtn">Reset</button>
+            <button id="baseCurveUIBackBtn"> Back</button>
+
+          </div>
+
+          <!------- FORMULA MENU ------->
+          <div class="formulaMenu hidden">
+            
+            <h1><i class="fa-solid fa-square-root-variable"></i> Formula</h1>
+            <p>Select a type of formula you want to see.</p>
+
+            <button id="lensTranspositionFormBtn" class="functionBtn"><i class="fa-solid fa-glasses"></i> Lens Transposition</button>
+            <button id="contactLensParameterFormBtn"class="functionBtn"><img src="assets/images/contact-lens-white.png" alt="" class="contact-lens-icon"> Contact Lens Parameter</button>
+            <button id="formulaMenuBackBtn"> Back</button>
+
+          </div>
+
+          <!------- LENS TRANSPOSITION FORMULA ------->
+          <div class="lensTranspositionFormula hidden">
+
+            <h1><i class="fa-solid fa-square-root-variable"></i> Lens Transposition</h1>
+            
+            <button id="lensTranspositionFormulaBackBtn"> Back</button>
+
+          </div>
+
+          <!------- CL PARAMETER FORMULA ------->
+          <div class="contactLensParameterFormula hidden">
+
+            <h1><i class="fa-solid fa-square-root-variable"></i> Contact Lens Parameter </h1>
+
+            <button id="contactLensParameterFormulaBackBtn"> Back</button>
+
+          </div>
+
+          <!------- GUIDE MENU ------->
+          <div class="guideMenu hidden">
+            
+            <h1><i class="fa-solid fa-book"></i> Guide</h1>
+            <p>Guide and reference in using OpticDesk.</p>
+
+            <button id="guideBackBtn"> Back</button>
+
+          </div>
+          
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Email : marcsnl@proton.me</p>
+      </footer>
+    
+    </div>
+
+
+    <!-- scripts -->
+    <script src="scripts/darkmode-script.js"></script>
+    <script src="scripts/ui-toggle-script.js"></script>
+    <script src="scripts/lens-transposition-script.js"></script>
+    <script src="scripts/effective-power-script.js"></script>
+    <script src="scripts/spherical-equivalent-script.js"></script>
+    <script src="scripts/base-curve-script.js"></script>
+
+  </body>
+</html>

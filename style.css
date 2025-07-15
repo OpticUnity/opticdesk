@@ -1,0 +1,466 @@
+/* -------- Global Reset -------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* -------- Global Variables -------- */
+:root {
+  --white: #fff;
+  --text-color: #000000;
+  --primary-color: #000;
+  --secondary-color: #272B2F;
+  --ui-bg: #fff;
+}
+
+/* -------- Page Layout Setup -------- */
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--ui-bg);
+  color: var(--text-color);
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-logo{
+  width: 46x;
+  height: 46px;
+}
+
+button{
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-size: 18px;
+  height: 50px;
+  width: 200px;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+button:hover{
+  background: var(--secondary-color)
+}
+
+input{
+  padding: 0.6rem;
+  margin: 0.3rem 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--light-bg);
+  color: var(--black);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* -------- Navigation Bar -------- */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: var(--primary-color);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.navigation-bar {
+  max-width: 1300px;
+  height: 100%;
+  margin: auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation-bar a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 18px;
+  opacity: 0.75;
+}
+
+.navigation-bar a:hover,
+.navigation-bar a.active-nav {
+  opacity: 1;
+}
+
+.title-page-area {
+  font-size: 30px;
+  font-weight: 600;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+.page-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--secondary-color);
+}
+
+
+/* -------- Appearance Area Style -------- */
+.appearance-area {
+  display: flex;
+  align-items: center;
+}
+
+.dark-mode-btn {
+  width: 50px;
+  height: 50px;
+  background: var(--secondary-color);
+  color: var(--white);
+  border-radius: 6px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  margin-left: 10px;
+  opacity: 0.8;
+}
+
+.dark-mode-btn:hover {
+  opacity: 1;
+}
+
+/* -------- Page Content Style -------- */
+.content {
+  flex: 1;
+  padding-top: 50px;
+}
+
+.page-content h1 {
+  font-size: 35px;
+}
+
+/* -------- Content Links Style -------- */
+
+.content a {
+  font-size: 20px;
+  padding: 12px 20px;
+  background: var(--primary-color);
+  color: var(--white);
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.content a:hover {
+  background: var(--secondary-color);
+}
+
+/* -------- Main Section Style -------- */
+.page-content {
+  margin-top: 70px;
+  padding: 0 60px;
+  background: var(--ui-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.color-text {
+  color: var(--primary-color);
+}
+
+.page-content p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 20px 0 30px;
+}
+
+/* -------- Main UI Style -------- */
+
+.mainMenu, .calculatorMenu, .lensTranspositionUI, .contactLensParameterMenu, .effectivePowerUI, .sphericalEquivalentUI, .baseCurveUI, .formulaMenu, .lensTranspositionFormula, .contactLensParameterFormula, .guideMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.lensTranspositionUI{
+  align-items: center;
+}
+
+.functionBtn{
+    width: 300px;
+}
+
+.uiSelect {
+  height: 50px;
+  font-size: 16px;
+  text-align: center;
+  padding: 0 15px;
+  border-radius: 6px;
+  border: 1px solid gray;
+  background-color: var(--ui-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  outline: none;
+}
+
+.contact-lens-icon{
+  width: 28px;
+  height: 18px;
+  vertical-align: -2px;
+}
+
+.contact-lens-lightmode-icon, .contact-lens-darkmode-icon{
+  width: 42px;
+  height: 32px;
+  vertical-align: -3px;
+}
+
+/* -------- Lens Transposition UI Style -------- */
+
+.lensTranspositionUIHeader, .lensTranspositionFormContainer, .conversionMenu{
+  margin-top: 20px;
+}
+
+.effectivePowerFormContainer{
+  margin-top: 30px;
+}
+
+.cyl-form-header{
+  margin-top: 10px;
+}
+
+.promptPrescriptionForm{
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.plusCylPrescriptionForm, .minusCylPrescriptionForm, .crossCylPrescriptionForm, .sphericalPrescriptionEp, .cylindricalPrescriptionEp, .sphericalEquivalentPrescriptionContainer {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.divisionArea p {
+    position: relative;
+    top: 15px;
+}
+
+.inputForm{
+  display: flex;
+  flex-direction: column;
+  vertical-align: center;
+  align-items: center;
+}
+
+.prescriptionInput{
+  width: 85px;
+}
+
+.conversionArea{
+  margin-top: 50px;
+}
+
+.conversionMenu{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lensTranspositionResultBox{
+  margin-top: 50px;
+  background: var(--light-bg);
+  color: var(--black);
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  height: 175px;
+}
+
+.lensTranspositionResultBox p{
+  margin-top: 50px;
+}
+
+#lensTranspositionResetBtn{
+  margin-top: 70px;
+}
+
+/* -------- EFFECTIVE POWER UI STYLE -------- */
+
+.effectivePowerUIHeader{
+  margin-top: 20px;
+}
+
+.effectivePowerBody{
+  margin-top: 30px;
+}
+
+.effectivePowerResultBox{
+  margin-top: 50px;
+  background: var(--light-bg);
+  color: var(--black);
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  height: 175px;
+}
+
+.effectivePowerResultBox p{
+  margin-top: 50px;
+}
+
+.vertexDistanceInput {
+  margin-top: 15px;
+}
+
+#effectivePowerComputeBtn{
+  margin-top: 30px;
+}
+
+#effectivePowerResetBtn{
+  margin-top: 70px;
+}
+
+/* -------- Spherical Equivalent -------- */
+
+.spherical-equivalent-form-header{
+  margin-top: 20px;
+}
+
+.flatKinput{
+  width: 100px;
+}
+
+.sphericalEquivalentResultBox{
+  margin-top: 50px;
+  background: var(--light-bg);
+  color: var(--black);
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  height: 175px;
+}
+
+.sphericalEquivalentResultBox p{
+  margin-top: 50px;
+}
+
+.sphericalEquivalentComputeBtn{
+  margin-top: 30px;
+}
+
+#sphericalEquivalentResetBtn{
+  margin-top: 70px;
+}
+
+/* -------- Base Curve -------- */
+
+.clTypeArea{
+  margin-top: 50px;
+}
+
+.clTypeMenu{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.baseCurveResultBox{
+  margin-top: 50px;
+  background: var(--light-bg);
+  color: var(--black);
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  height: 175px;
+}
+
+.baseCurveResultBox p{
+  margin-top: 50px;
+}
+
+#baseCurveResetBtn{
+  margin-top: 70px;
+}
+
+/* -------- Footer -------- */
+.footer {
+  background: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+}
+
+/* -------- Dark Mode Theme -------- */
+
+.color-text.darkMode {
+  color: #FFD700;  /* yellow */
+}
+
+/* -------- Style Functions -------- */
+
+.hidden{
+  display: none;
+}
+
+/* -------- Responsive Media -------- */
+@media (max-width: 1100px) {
+  .page-content {
+    padding: 0 30px;
+  }
+
+  .page-content p {
+    width: 90%;
+  }
+}
+
+/* ------- Mobile Device ------- */
+@media (max-width: 768px) {
+
+  .appearance-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+}
