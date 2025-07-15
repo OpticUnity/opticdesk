@@ -493,5 +493,9 @@ nav {
     align-items: center;
     gap: 10px;
   }
+
+  .conversionMenu, .clTypeMenu{
+    flex-direction: column;
+  }
   
 }
