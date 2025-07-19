@@ -19,16 +19,17 @@
         <link rel="stylesheet" href="style.css" />
             
         <!-- Font Awsome local link -->
-        <!--<link rel="stylesheet" href="../../all.css" />-->
+        <link rel="stylesheet" href="../../all.css" />
 
         <!-- Font Awsome main link -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/> -->
         
     </head>
     <body class="locked">
     
     <div id="lockOverlay">
-      <div>
+      <div class="overlay-prompt">
+        <h3>One Time Password : </h3>
         <p>Kung anong galaw ko,</p>
         <p>siya ang _________ na ni-nu-neutralize ko:</p>
         <input class="lockInput" type="text" id="accessInput" placeholder="Enter code" oninput="this.value=this.value.toLowerCase()" />
@@ -438,7 +439,34 @@
           <div class="lensTranspositionFormula hidden">
 
             <h1><i class="fa-solid fa-square-root-variable"></i> Lens Transposition</h1>
-            
+            <p>Below are the details of the formula in lens transposition</p>
+
+            <h2 class="formulaSection">Lens Cylinder Forms</h2>
+            <p>There are 3 types of cylinder forms</p>
+            <img src="assets/images/lens-transposition-formula-form-types-lightmode.png" alt="Form Types Lightmode" class="formula-img light-img">
+            <img src="assets/images/lens-transposition-formula-form-types-darkmode.png" alt="Form Types Darkmode" class="formula-img dark-img hidden">
+
+            <h2 class="formulaSection">Minus to Plus Sphero-Cylinder Form</h2>
+            <img src="assets/images/lens-transposition-formula-minus-to-plus-lightmode.png" alt="Minus To Plus Lightmode" class="formula-img light-img">
+            <img src="assets/images/lens-transposition-formula-minus-to-plus-darkmode.png" alt="Minus To Plus Darkmode" class="formula-img dark-img hidden">
+
+            <h2 class="formulaSection">Plus to Minus Sphero-Cylinder Form</h2>
+            <img src="assets/images/lens-transposition-formula-plus-to-minus-lightmode.png" alt="Plus To Minus Lightmode" class="formula-img light-img">
+            <img src="assets/images/lens-transposition-formula-plus-to-minus-darkmode.png" alt="Plus To Minus Darkmode" class="formula-img dark-img hidden">
+
+            <h2 class="formulaSection">Sphero-Cylinder (Minus or Plus) to Crossed-Cylinder Form</h2>
+            <img src="assets/images/lens-transposition-formula-sphero-to-crossed-lightmode.png" alt="Sphero To Crossed Lightmode" class="formula-img light-img">
+            <img src="assets/images/lens-transposition-formula-sphero-to-crossed-darkmode.png" alt="Sphero To Crossed Darkmode" class="formula-img dark-img hidden">
+
+            <h2 class="formulaSection">Crossed-Cylinder to Minus Sphero-Cylinder Form</h2>
+            <img src="assets/images/lens-transposition-formula-crossed-to-minus-lightmode.png" alt="Crossed To Minus Lightmode" class="formula-img light-img">
+            <img src="assets/images/lens-transposition-formula-crossed-to-minus-darkmode.png" alt="Crossed To Minus Darkmode" class="formula-img dark-img hidden">
+
+            <h2 class="formulaSection">Crossed-Cylinder to Minus Sphero-Cylinder Form</h2>
+            <img src="assets/images/lens-transposition-formula-crossed-to-plus-lightmode.png" alt="Crossed To Plus Lightmode" class="formula-img light-img">
+            <img src="assets/images/lens-transposition-formula-crossed-to-plus-darkmode.png" alt="Crossed To Plus Darkmode" class="formula-img dark-img hidden">
+
+
             <button id="lensTranspositionFormulaBackBtn"> Back</button>
 
           </div>
@@ -447,6 +475,19 @@
           <div class="contactLensParameterFormula hidden">
 
             <h1><i class="fa-solid fa-square-root-variable"></i> Contact Lens Parameter </h1>
+            <p>Below are the details of the formula in different contact lens parameters : </p>
+
+            <h2 class="formulaSection">Effective Power</h2>
+            <img src="assets/images/contact-lens-parameter-effective-power-lightmode.png" alt="Effective Power Lightmode" class="formula-img light-img">
+            <img src="assets/images/contact-lens-parameter-effective-power-darkmode.png" alt="Effective Power Darkmode" class="formula-img dark-img hidden">
+
+            <h2 class="formulaSection">Spherical Equivalent</h2>
+            <img src="assets/images/contact-lens-parameter-spherical-equivalent-lightmode.png" alt="Spherical Equivalent Lightmode" class="formula-img light-img">
+            <img src="assets/images/contact-lens-parameter-spherical-equivalent-darkmode.png" alt="Spherical Equivalent Darkmode" class="formula-img dark-img hidden">
+
+            <h2 class="formulaSection">Base Curve</h2>
+            <img src="assets/images/contact-lens-parameter-base-curve-lightmode.png" alt="Base Curve Lightmode" class="formula-img light-img">
+            <img src="assets/images/contact-lens-parameter-base-curve-darkmode.png" alt="Base Curve Darkmode" class="formula-img dark-img hidden">
 
             <button id="contactLensParameterFormulaBackBtn"> Back</button>
 
@@ -457,6 +498,17 @@
             
             <h1><i class="fa-solid fa-book"></i> Guide</h1>
             <p>Guide and reference in using OpticDesk.</p>
+
+            <h2 class="guideSection">Guide</h2>
+            <p>This program is intended for personal use only.</p>
+            <p>All computations are mainly based on the formula provdided.</p>
+            <p>Review the formula that was used in the calculator, if planning to use it in a clinic setup.</p>
+            <p>Added a basic lock to prevent easy access by unintended users.</p>
+            <p>Reach out on the email provided below for any concerns.</p>
+
+            <h2 class="guideSection">Reference</h2>
+            <p><em>Ophthalmic Dispensing</em> - Clifford W. Brooks, Irvin M. Borish.</p>
+            <p><em>Manual of Contact Lens Prescribing and Fitting</em> - Milton M. Hom.</p>
 
             <button id="guideBackBtn"> Back</button>
 

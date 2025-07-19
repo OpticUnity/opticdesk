@@ -4,6 +4,8 @@ const darkToggle = document.querySelector(".dark-mode-btn i");
 const colorText = document.querySelectorAll(".color-text");
 const clLightModeImg = document.querySelectorAll(".contact-lens-lightmode-icon");
 const clDarkModeImg = document.querySelectorAll(".contact-lens-darkmode-icon");
+const formulaLightModeImg = document.querySelectorAll(".light-img");
+const formulaDarkModeImg = document.querySelectorAll(".dark-img");
 const root = document.querySelector(":root");
 
 // Default colors for light mode (CSS variables)
@@ -42,9 +44,13 @@ darkToggle.addEventListener("click", () => {
     applyThemeColors(colorData); // Apply the color theme when dark mode is activated
     darkToggle.parentElement.title = "Light Mode";
 
-    // Show dark images, hide light images
+    // Show dark icons, hide light icons
     clLightModeImg.forEach(img => img.classList.add('hidden'));
     clDarkModeImg.forEach(img => img.classList.remove('hidden'));
+
+    // Show dark images, hide light images
+    formulaLightModeImg.forEach(img => img.classList.add('hidden'));
+    formulaDarkModeImg.forEach(img => img.classList.remove('hidden'));
 
   } else {
     // Switch to light mode
@@ -53,8 +59,12 @@ darkToggle.addEventListener("click", () => {
     applyThemeColors(defaultLightModeColors); // Apply the default light mode colors
     darkToggle.parentElement.title = "Dark Mode";
 
-    // Show light images, hide dark images
+    // Show light icons, hide dark icons
     clLightModeImg.forEach(img => img.classList.remove('hidden'));
     clDarkModeImg.forEach(img => img.classList.add('hidden'));
+
+        // Show light images, hide dark images
+    formulaLightModeImg.forEach(img => img.classList.remove('hidden'));
+    formulaDarkModeImg.forEach(img => img.classList.add('hidden'));
   }
 });

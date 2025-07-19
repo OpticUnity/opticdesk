@@ -205,7 +205,12 @@ function formatD(val) {
 }
 
 
-const correctKey = "meridian"; // your lowercase-only key
+const correctKey = "meridian"; //the susi
+
+if (localStorage.getItem('unlocked') === 'true') {
+  document.body.classList.remove('locked');
+  document.getElementById('lockOverlay').style.display = 'none';
+}
 
 function checkAccess() {
   const input = document.getElementById('accessInput').value;
@@ -222,6 +227,7 @@ function checkAccess() {
   if (input === correctKey) {
     document.body.classList.remove('locked');
     document.getElementById('lockOverlay').style.display = 'none';
+    localStorage.setItem('unlocked', 'true'); // remember unlock
   } else {
     errorMsg.textContent = "Incorrect key. Try again.";
     errorMsg.style.display = 'block';
