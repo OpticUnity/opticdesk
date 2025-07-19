@@ -1,4 +1,4 @@
-//--------------- Dark Mode toggle logic ---------------
+//--------------- Dark Mode toggle logic with save ---------------
 
 const darkToggle = document.querySelector(".dark-mode-btn i");
 const colorText = document.querySelectorAll(".color-text");
@@ -32,39 +32,51 @@ function toggleDarkMode(darkModeStyle) {
   colorText.forEach(el => el.classList[method]("darkMode"));
 }
 
+// Function to enable dark mode
+function enableDarkMode(colorData) {
+  darkToggle.classList.replace("fa-moon", "fa-sun");
+  toggleDarkMode(true);
+  applyThemeColors(colorData);
+  darkToggle.parentElement.title = "Light Mode";
+  clLightModeImg.forEach(img => img.classList.add('hidden'));
+  clDarkModeImg.forEach(img => img.classList.remove('hidden'));
+  formulaLightModeImg.forEach(img => img.classList.add('hidden'));
+  formulaDarkModeImg.forEach(img => img.classList.remove('hidden'));
+  localStorage.setItem("darkMode", "true"); // Save state
+}
+
+// Function to disable dark mode
+function disableDarkMode() {
+  darkToggle.classList.replace("fa-sun", "fa-moon");
+  toggleDarkMode(false);
+  applyThemeColors(defaultLightModeColors);
+  darkToggle.parentElement.title = "Dark Mode";
+  clLightModeImg.forEach(img => img.classList.remove('hidden'));
+  clDarkModeImg.forEach(img => img.classList.add('hidden'));
+  formulaLightModeImg.forEach(img => img.classList.remove('hidden'));
+  formulaDarkModeImg.forEach(img => img.classList.add('hidden'));
+  localStorage.setItem("darkMode", "false"); // Save state
+}
+
 // Handle dark mode toggle
 darkToggle.addEventListener("click", () => {
   const isDarkMode = darkToggle.classList.contains("fa-moon");
-  const colorData = darkToggle.getAttribute("data-color").split(" "); // Get color data from the button
-  
+  const colorData = darkToggle.getAttribute("data-color").split(" ");
+
   if (isDarkMode) {
-    // Switch to dark mode
-    darkToggle.classList.replace("fa-moon", "fa-sun");
-    toggleDarkMode(true);
-    applyThemeColors(colorData); // Apply the color theme when dark mode is activated
-    darkToggle.parentElement.title = "Light Mode";
-
-    // Show dark icons, hide light icons
-    clLightModeImg.forEach(img => img.classList.add('hidden'));
-    clDarkModeImg.forEach(img => img.classList.remove('hidden'));
-
-    // Show dark images, hide light images
-    formulaLightModeImg.forEach(img => img.classList.add('hidden'));
-    formulaDarkModeImg.forEach(img => img.classList.remove('hidden'));
-
+    enableDarkMode(colorData);
   } else {
-    // Switch to light mode
-    darkToggle.classList.replace("fa-sun", "fa-moon");
-    toggleDarkMode(false);
-    applyThemeColors(defaultLightModeColors); // Apply the default light mode colors
-    darkToggle.parentElement.title = "Dark Mode";
+    disableDarkMode();
+  }
+});
 
-    // Show light icons, hide dark icons
-    clLightModeImg.forEach(img => img.classList.remove('hidden'));
-    clDarkModeImg.forEach(img => img.classList.add('hidden'));
-
-        // Show light images, hide dark images
-    formulaLightModeImg.forEach(img => img.classList.remove('hidden'));
-    formulaDarkModeImg.forEach(img => img.classList.add('hidden'));
+// Apply saved mode on load
+document.addEventListener("DOMContentLoaded", () => {
+  const savedMode = localStorage.getItem("darkMode");
+  const colorData = darkToggle.getAttribute("data-color").split(" ");
+  if (savedMode === "true") {
+    enableDarkMode(colorData);
+  } else {
+    disableDarkMode();
   }
 });
