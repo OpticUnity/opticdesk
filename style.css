@@ -156,6 +156,9 @@ nav {
   border: 2px solid var(--secondary-color);
 }
 
+#titleLink{
+  opacity: 1.0;
+}
 
 /* -------- Appearance Area Style -------- */
 .appearance-area {
